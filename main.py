@@ -14,25 +14,29 @@ def AddMatrices():
   num_row1=int(input("Enter number of rows :"))
   num_co1l=int(input("enter number of columns :"))
 
-  first_matrix= [ [0] * num_co1l] * num_row1
-  second_matrix=[ [0] * num_co1l] * num_row1
-  sum_matrix=[ [0] * num_co1l] * num_row1
+  first_matrix= []
+  second_matrix= []
+  sum_matrix= []
   
   for row in range (num_row1):
-     for col in range (num_co1l):
-       x = int(input("Enter element of first matrix :"))
-       first_matrix[row][col] = x
+    r = []
+    for col in range (num_co1l):
+      r.append(int(input("Enter element of first matrix :")))
+    first_matrix.append(r)
 
   for row in range (num_row1):
+    r = []
     for col in range (num_co1l):
-      x = int(input("Enter element of second metrix:"))
-      second_matrix[row][col] = x
+      r.append(int(input("Enter element of second metrix:")))
+    second_matrix.append(r)
 
-  for row in range (num_row1):
-    for col in range (num_co1l):
-      sum_matrix[row][col] = first_matrix[row][col]+second_matrix[row][col]
-      print(sum_matrix[row][col])  
+  for i in range (len(first_matrix)):
+    r = []
+    for j in range (len(first_matrix[0])):
+      r.append(first_matrix[i][j] + second_matrix[i][j])
+    sum_matrix.append(r) 
 
+  print (sum_matrix)
 def CheckRotation():
   print ("Check Rotation")
   
